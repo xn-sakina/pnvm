@@ -25,7 +25,8 @@
     "build": "tsc",
     "test": "node bin/pnvm.js",
     "prepublishOnly": "pnpm build",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "push": "npm publish --registry=https://registry.npmjs.com/"
   },
   "bin": {
     "pnvm": "bin/pnvm.js"
