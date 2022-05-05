@@ -1,0 +1,54 @@
+{
+  "name": "pnvm",
+  "version": "1.0.0",
+  "description": "Pnpm version manager",
+  "keywords": [
+    "pnpm",
+    "pnpm-version",
+    "pnpm-v6",
+    "pnpm-v7",
+    "pnpm-version-toggle",
+    "pnpm-version-manager",
+    "pnvm"
+  ],
+  "homepage": "https://github.com/fz6m/pnvm#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fz6m/pnvm"
+  },
+  "author": "fz6m",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "node bin/pnvm.js",
+    "prepublishOnly": "pnpm build",
+    "prepare": "husky install"
+  },
+  "bin": {
+    "pnvm": "bin/pnvm.js"
+  },
+  "devDependencies": {
+    "@fz6m/eslint-plugin-sakina": "^2.0.2",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^17.0.31",
+    "@xn-sakina/mental": "^1.0.0",
+    "commit-verify": "^1.0.3",
+    "eslint": "^8.14.0",
+    "husky": "^7.0.4",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^9.2.0",
+    "execa": "^5.0.0",
+    "gradient-string": "2.0.1",
+    "lodash": "^4.17.21",
+    "ora": "^5.0.0",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "packageManager": "pnpm@7.0.0",
+  "license": "MIT"
+}
