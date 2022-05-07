@@ -1,6 +1,6 @@
 {
   "name": "pnvm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pnpm version manager",
   "keywords": [
     "pnpm",
@@ -11,10 +11,10 @@
     "pnpm-version-manager",
     "pnvm"
   ],
-  "homepage": "https://github.com/fz6m/pnvm#README",
+  "homepage": "https://github.com/xn-sakina/pnvm#README",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fz6m/pnvm"
+    "url": "https://github.com/xn-sakina/pnvm"
   },
   "author": "fz6m",
   "files": [
