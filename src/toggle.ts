@@ -43,14 +43,10 @@ export const toggleVersion = async (v: string) => {
     console.log(chalk.red(`version cannot be empty`))
     return
   }
-  const [isValid, versionAsNumber] = isValidNumber(v)
-  if (!isValid) {
-    console.log(chalk.red(`version must be valid number (e.g. 6.20)`))
-    return
-  }
   // install
   await install(v)
-  if (versionAsNumber >= 7) {
+  const isLegacy = v.startsWith('6')
+  if (!isLegacy) {
     await execa(`pnpm`, ['setup'])
   }
   console.log(`> ${gradient.pastel('Toggled pnpm')} ${chalk.bold.green(v)}`)
