@@ -1,5 +1,5 @@
 import chalk from 'chalk'
-import { toNumber, isNumber, isNaN, isSafeInteger } from 'lodash'
+import { toNumber, isNumber, isNaN, repeat } from 'lodash'
 import execa from 'execa'
 import ora from 'ora'
 // @ts-ignore
@@ -26,8 +26,10 @@ const install = async (v: string) => {
   const spinner = ora(gradient.atlas('Installing...'))
   spinner.start()
   const isPnpmExist = await isCommandExist('pnpm')
-  if (isSafeInteger(toNumber(v))) {
-    v = `^${v}`
+  const versionSegments = v.split('.').length
+  // not specified version
+  if (versionSegments < 3) {
+    v = `^${v}${repeat('.0', 3 - versionSegments)}`
   }
   if (isPnpmExist) {
     await execa(`pnpm`, [`add`, `-g`, `pnpm@${v}`])
